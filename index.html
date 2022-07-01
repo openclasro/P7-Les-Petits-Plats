@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8bd06a7de0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>les petits plats</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/images.png" alt="logo">
+        </div>
+    </header>
+    <main>
+        <section class="search">
+            <div id="searchBar">
+                <input type="text"  id="searchBar_input" placeholder="Rechercher une recette">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            
+            </div>
+            <div class="tag">
+                <ul id="tag_list">
+                    <!-- <li class="ingredient">
+                        <span>Noix de coco</span>
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </li> -->
+                    
+                </ul>
+            </div>
+            <div id="filters">
+                <div class="filterButton" id="button_ingredients">
+                    <div id="iconIngredient" class="filters">
+                    <input type="text" class="filter" id="filterIngredients" placeholder="Ingredients">
+                        <i   class="fa-solid fa-chevron-down angle"></i>
+                    </div>
+                    <ul class="filterList" id="listIngredients">
+                        
+                        
+                    </ul>
+
+                </div>
+                <div class="filterButton" id="button_appliances">
+                    <div id="iconAppliances" class="filters">
+                        <input type="text" class="filter" id="filterAppliances" placeholder="Appliances">
+                        <i class="fa-solid fa-chevron-down angle"></i>
+                    </div>
+
+                    <ul class="filterList" id="listAppliances">
+                       
+
+                    </ul>
+
+                </div>
+                <div class="filterButton" id="button_ustensils">
+                    <div id="iconUstensils" class="filters">
+                        <input type="text" class="filter" id="filterUstensils" placeholder="Ustensils">
+                        <i class="fa-solid fa-chevron-down angle"></i>
+                    </div>
+
+                    <ul class="filterList" id="listUstensils">
+                       
+
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+        <section id="resultSearch">
+           
+
+            
+            
+
+        </section>
+    </main>
+    
+    <script type="module" src="./scripts/main.js"></script>
+</body>
+</html>

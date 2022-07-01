@@ -1,0 +1,1 @@
+export const filterEvent = new CustomEvent('filterEvent');
