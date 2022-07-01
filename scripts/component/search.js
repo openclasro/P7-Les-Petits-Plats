@@ -41,24 +41,27 @@ export class Search{
     
        
         let filtredRecipes = [];
-        this.recipes.forEach(recipe =>{
+        for (let i = 0; i < this.recipes.length; i++) {
+            const recipe = this.recipes[i];
             let added = false;
-            recipe.ingredients.filter(ingredient => {
+            for (let j = 0; j < recipe.ingredients.length; j++) {
+                const ingredient = recipe.ingredients[j];
                 if(ingredient.ingredient.toLowerCase().includes(str.toLowerCase().trim())){
                     filtredRecipes.push(recipe);
                     added = true;
-                }
-                
-            });
+                    break;
+                }  
+            }
 
-         
             if(  !added && recipe.name.toLowerCase().includes(str.toLowerCase().trim())){
                 filtredRecipes.push(recipe);
             }
             else if(!added && recipe.description.toLowerCase().includes(str.toLowerCase().trim())){
                 filtredRecipes.push(recipe);
             }
-        })
+            
+        }
+       
 
         
        return filtredRecipes;
