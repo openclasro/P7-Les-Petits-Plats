@@ -114,7 +114,7 @@ export class Search{
 
 
     filterRecipesByTag(){
-        window.addEventListener('filterEvent',e=>{
+        window.addEventListener('filterEvent',(e) =>{
 
             const tags = document.querySelectorAll('#tag_list li');
 
@@ -159,7 +159,7 @@ export class Search{
        
         resultSearch.innerHTML = "";
         if(recipes.length === 0){
-            resultSearch.innerHTML =  `<div class="result-section__empty">Aucune recette ne correspond à votre critère… vous pouvez
+            resultSearch.innerHTML =  `<div class="result-section">Aucune recette ne correspond à votre critère… vous pouvez
             chercher « tarte aux pommes », « poisson », etc...</div>`;
         }
         recipes.forEach(recipe => {

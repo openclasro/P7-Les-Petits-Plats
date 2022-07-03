@@ -272,13 +272,20 @@ header{
 }
 #button_ingredients > ul:first-of-type{
     background-color: blue;
+    width: 300px;
     
 }
 
 #button_appliances > ul:first-of-type{
     background-color: #68d9a4;
+    width: 300px;
 }
 
 #button_ustensils > ul:first-of-type{
     background-color: #ed6454;
+    width: 300px;
+}
+
+.result-section{
+    grid-column: 1/4;
 }

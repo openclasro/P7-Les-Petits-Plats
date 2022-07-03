@@ -7,8 +7,9 @@ export class Filter {
         this.filterUl = filterUl;
         this.filtersListDOM = []
         this.couleur = couleur;
-        this.remplirFilter();
+        this.remplirFilter( this.listFilters);
         this.filterHandler();
+        this.filterFilters();
         
         
     }
@@ -53,11 +54,25 @@ export class Filter {
         })
     }
 
+    filterFilters(){
+        const input = this.filterUl.querySelector('input');
+        input.addEventListener('keyup',(e)=>{
+          
+            const key = e.target.value;
+           
+            const listFiltredFilter = this.listFilters.filter(filter => filter.toLowerCase().includes(key.toLowerCase()))
+            this.remplirFilter(listFiltredFilter)
 
-    remplirFilter(){
+        });
+
+
+    }
+
+
+    remplirFilter(listFilters){
         const ulFilters = this.filterUl.querySelector('ul');
         ulFilters.innerHTML = "";
-        this.listFilters.forEach(filter => {
+        listFilters.forEach(filter => {
             const liFilter = document.createElement('li');
             liFilter.innerHTML = filter;
             // liFilter.style.display = 'none';
