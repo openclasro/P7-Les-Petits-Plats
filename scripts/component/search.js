@@ -18,7 +18,9 @@ export class Search{
 
             const searchQuery = e.target.value;
             if(searchQuery.length > 2){
+                console.time('summBrute')
                 const filtredRecipes = this.filterRecipesByString(searchQuery);
+                console.timeEnd('summBrute')
                 this.displayRecipes(filtredRecipes);
                 this.newFilterList(filtredRecipes);
 
