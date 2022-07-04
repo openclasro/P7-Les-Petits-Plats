@@ -10,15 +10,16 @@ export class Search {
     this.handleSearchBar();
     this.filterRecipesByTag();
     this.displayRecipes(this.recipes);
+    // this.testAlgoTime();
   }
 
   handleSearchBar() {
     this.searchBar.addEventListener("input", (e) => {
       const searchQuery = e.target.value;
       if (searchQuery.length > 2) {
-        console.time('summBrute')
+        console.time('algo1')
         const filtredRecipes = this.filterRecipesByString(searchQuery);
-        console.timeEnd('summBrute')
+        console.timeEnd('algo1')
         this.displayRecipes(filtredRecipes);
         this.newFilterList(filtredRecipes);
       } else {
@@ -26,6 +27,17 @@ export class Search {
         this.newFilterList(this.recipes);
       }
     });
+  }
+
+  testAlgoTime(){
+     const tests = ['Lait de coco', 'Jus de citron', 'Crème de coco', 'Sucre', 'Glaçons', 'Thon Rouge (ou blanc)', 'Concombre', 'Tomate', 'Carotte', 'Citron Vert', 'Lait de Coco', 'Poulet', 'Coulis de tomate', 'Oignon', 'Poivron rouge', "Huile d'olive", 'Riz blanc', 'Thon en miettes', 'Oeuf dur', 'Maïs', 'Vinaigrette', 'Pâte feuilletée', 'Crème fraiche', 'Gruyère râpé', 'Moutarde de Dijon', 'Pâte brisée', 'Pomme', 'Oeuf', 'Sucre en Poudre', 'Sucre vanillé', 'Pâte sablée', 'Chocolat au lait', 'Crème liquide', 'Beurre', 'Fraise', 'Noix', 'Chocolat noir', 'Farine', 'Olives', 'Fromage de chèvre', 'Vinaigre Balsamic', 'Basilic', 'Roblochon', 'Pommes de terre', 'Jambon fumé', 'Vin blanc sec', 'Tomates cerises', 'Mozzarella', 'Jambon de parme', 'Pommes', 'Salade Verte', 'Rhubarbe', 'Eau', 'Mâche', 'Échalote', 'Vinaigre de cidre', 'Saucisse bretonne ou de toulouse', 'Farine de blé noir', 'Fromage à raclette', 'Lait', 'Beurre salé', 'Banane', 'Pennes', "Huile d'olives", 'Pastèque', 'Menthe', 'Ananas', 'Glace à la vanille', 'Kiwi', 'Citron', 'Sucre glace', 'Tagliatelles', 'Lardons', 'Parmesan', 'Spaghettis', 'Viande hachée 1% de matière grasse', 'Vin rouge', 'Crème Fraiche', 'Crème Fraîche', 'Macaronis', 'Mayonnaise', 'Chocolat noir en pepites', 'Ail', 'Oseille', 'Crème fraîche', 'Vermicelles', 'Poireau', 'Crême fraîche', 'Pois chiches', 'Paprika', 'Pois Cassé', 'Haricots verts', 'Petits poids', 'Pain de mie', 'Blanc de dinde', 'Emmental', 'Gruyère', 'Noix de muscade', 'Saumon Fumé', 'Feuilles de laitue'];
+     console.time('algo1')
+     for (let i = 0; i < tests.length; i++) {
+        const test = tests[i];
+        const filtredRecipes = this.filterRecipesByString(test); 
+     }
+     console.timeEnd('algo1')
+    
   }
 
   /**
@@ -65,11 +77,13 @@ export class Search {
     return element.ingredients.some((element) => {
       return element.ingredient.toLowerCase().includes(str);
     });
-  }
 
-  searchInDescription(element, str) {
-    return element.description.toLowerCase().includes(str);
-  }
+}
+searchInDescription(element, str) {
+  return element.description.toLowerCase().includes(str);
+}
+
+
 
   filterRecipesByStringIngredients(str, recipes) {
     let filtredRecipes = [];
@@ -154,6 +168,8 @@ export class Search {
       this.newFilterList(filtredRecipes);
     });
   }
+
+
   displayRecipes(recipes) {
     const resultSearch = document.querySelector("#resultSearch");
 
