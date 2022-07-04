@@ -38,10 +38,10 @@ export class RecipeFactory {
         
 
         this.ingredients.forEach(ingredient =>{
-            if(ingredient.unit && ingredient.quantity != undefined){
+            if(ingredient.unit != undefined && ingredient.quantity != undefined){
                 recipe_description_centent_ingredients.innerHTML += `<p class="">${ingredient.ingredient}: ${ingredient.quantity}${ingredient.unit}</p>`
-            // }else if(ingredient.unit !=undefined && ingredient.quantity == undefined){
-            //     recipe_description_centent_ingredients.innerHTML += `<p class="">${ingredient.ingredient}: ${ingredient.unit}</p>`
+            }else if(ingredient.unit !=undefined && ingredient.quantity == undefined){
+                recipe_description_centent_ingredients.innerHTML += `<p class="">${ingredient.ingredient}: ${ingredient.unit}</p>`
             }else if(ingredient.quantity !=undefined && ingredient.unit == undefined){
                 recipe_description_centent_ingredients.innerHTML += `<p class="">${ingredient.ingredient}: ${ingredient.quantity}</p>`
             }else{
