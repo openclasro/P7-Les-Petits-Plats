@@ -14,26 +14,57 @@ export class Filter {
         
     }
 
+    closeAutherFilter(){
+        const filterButtons = document.querySelectorAll('.filterButton');
+        
+
+        filterButtons.forEach(filter =>{
+            if(filter.id!=this.filterUl.id){
+                const otherulFilters = filter.querySelector('ul');
+                const iconFilter =  filter.querySelector('.angle');
+                otherulFilters.classList.remove('active');
+                iconFilter.style.transform ="none";
+            }
+        })
+    }
+
+    openFilter(){
+        
+        const ulFilters = this.filterUl.querySelector('ul');
+        const iconFilter =  this.filterUl.querySelector('.angle');
+        ulFilters.classList.add('active');
+        this.filterUl.firstElementChild.style.width ="340px";
+        iconFilter.style.transform ="rotate(180deg)";
+    
+        for (let i = 0; i <  this.filtersListDOM.length; i++) {
+            const element =  this.filtersListDOM[i];
+
+            element.style.display = 'block';
+
+            
+        }
+    }
     filterHandler(){
 
+
+        
+      
+        
+     
         const filterButton =  this.filterUl.querySelector('.filters input');
         const ulFilters = this.filterUl.querySelector('ul');
         const iconFilter =  this.filterUl.querySelector('.angle');
+
+
+       
         
         
         
         filterButton.addEventListener("click", () =>{
-            ulFilters.classList.add('active');
-            this.filterUl.firstElementChild.style.width ="340px";
-            iconFilter.style.transform ="rotate(180deg)";
-        
-            for (let i = 0; i <  this.filtersListDOM.length; i++) {
-                const element =  this.filtersListDOM[i];
-
-                element.style.display = 'block';
-
-                
-            }
+         
+            this.closeAutherFilter();
+            this.openFilter();
+           
 
         })
         
