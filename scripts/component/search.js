@@ -78,10 +78,10 @@ export class Search {
       return element.ingredient.toLowerCase().includes(str);
     });
 
-}
-searchInDescription(element, str) {
-  return element.description.toLowerCase().includes(str);
-}
+    }
+    searchInDescription(element, str) {
+    return element.description.toLowerCase().includes(str);
+    }
 
 
 

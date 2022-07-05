@@ -79,7 +79,7 @@ export class Filter {
            
             ulFilters.appendChild(liFilter);
             this.filtersListDOM.push(liFilter);
-            liFilter.addEventListener('click',e => this.createTag(liFilter.innerHTML));
+            liFilter.addEventListener('click',(e) => this.createTag(liFilter.innerHTML));
         
         });
     }
@@ -105,14 +105,10 @@ export class Filter {
         liTag.appendChild(iTag);
         tag_list.appendChild(liTag);
 
-        window.dispatchEvent(filterEvent);
+         window.dispatchEvent(filterEvent);
 
         
 
-// Listen for the event.
-
-
-// Dispatch the event.
 
         
        
