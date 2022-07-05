@@ -43,7 +43,7 @@ export class Search {
   /**
    *
    * @param {String} str  : la chaine de carectere tapé par l'utilisateur dans la bar de recherche
-   * @returns  {List} recipe : la liste des recette corespendante à la recherche de l'utilisateur
+   * @returns  {List} recipe : la liste des recettes correspendantes à la recherche de l'utilisateur
    * @version 1.0
    */
   filterRecipesByString(str) {
