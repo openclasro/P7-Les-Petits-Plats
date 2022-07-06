@@ -39,6 +39,7 @@ export class Search {
      console.timeEnd('algo1')
     
   }
+  
 
   /**
    *
