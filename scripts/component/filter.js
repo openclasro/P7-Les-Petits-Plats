@@ -33,7 +33,7 @@ export class Filter {
         const ulFilters = this.filterUl.querySelector('ul');
         const iconFilter =  this.filterUl.querySelector('.angle');
         ulFilters.classList.add('active');
-        this.filterUl.firstElementChild.style.width ="340px";
+         this.filterUl.firstElementChild.style.width ="450px";
         iconFilter.style.transform ="rotate(180deg)";
     
         for (let i = 0; i <  this.filtersListDOM.length; i++) {
@@ -74,7 +74,7 @@ export class Filter {
             ulFilters.classList.remove('active');
             iconFilter.style.transform ="none";
          
-            this.filterUl.firstElementChild.style.width ="250px";
+             this.filterUl.firstElementChild.style.width ="250px";
             for (let i = 0; i <  this.filtersListDOM.length; i++) {
                 const element =  this.filtersListDOM[i];
                 element.style.display = 'none';
@@ -106,6 +106,8 @@ export class Filter {
         listFilters.forEach(filter => {
             const liFilter = document.createElement('li');
             liFilter.innerHTML = filter;
+
+            console.log(filter)
             // liFilter.style.display = 'none';
            
             ulFilters.appendChild(liFilter);
